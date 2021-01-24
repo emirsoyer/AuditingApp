@@ -134,8 +134,7 @@
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\AuditComp.cs" />
     <Compile Include="Models\CustomerComp.cs" />
-    <Compile Include="Models\MizanTable.cs" />
-    <Compile Include="Models\ReportCode.cs" />
+    <Compile Include="Models\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

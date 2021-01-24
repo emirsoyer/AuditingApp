@@ -7,15 +7,16 @@ namespace AuditingApp.Models
 {
     public class Accounts
     {
-        public string AccountId { get; set; }
+        public int AccountId { get; set; }
+        public int AccountCode { get; set; }
         public string AccountName { get; set; }
-        public short MultiplicationNum1
-        {
-            get { return -1; }
-        }
-        public short MultiplicationNum2
-        {
-            get { return 1; }
-        }
+        public string AccountDescription { get; set; }
+        public short AccountPositive { get; set; }
+        public short AccountNegative { get; set; }
+        public bool ConvertSign { get; set; }
+        public string CustomerType { get; set; }
+        public bool Character { get; set; }
+
+
     }
 }

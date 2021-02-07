@@ -11,6 +11,7 @@ namespace AuditingApp.Models
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerType { get; set; }
+        public int CustomerTypeId { get; set; }
         public bool Consolidation { get; set; }
         public string CustomerDescription { get; set; }
         public string OrganizationMembership { get; set; }

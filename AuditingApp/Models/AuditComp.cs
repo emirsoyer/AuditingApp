@@ -23,28 +23,28 @@ namespace AuditingApp.Models
         public string TradeRegistryNumber { get; set; }
         public string OrganizationMembershipNumber { get; set; }
         public string MersisId { get; set; }
-        public List<BoardMember> BoardMembers { get; set; }
-        public List<Partner> Partners { get; set; }
-        public List<HeadAuditor> HeadAuditors { get; set; }
-        public List<AuditStaffMembers> AuditStaffMembers  { get; set; }
-        
-        
+        public virtual List<BoardMember> BoardMembers { get; set; }
+        public virtual List<Partner> Partners { get; set; }
+        public virtual List<HeadAuditor> HeadAuditors { get; set; }
+        public virtual List<AuditStaffMembers> AuditStaffMembers { get; set; }
+
+
     }
 
-    public class BoardMember
+    public class BoardMember : AuditComp
     {
         public string MemberName { get; set; }
     }
-    public class Partner
+    public class Partner : AuditComp
     {
         public string PartnerName { get; set; }
     }
-    public class HeadAuditor
+    public class HeadAuditor : AuditComp
     {
         public string HeadAuditorName { get; set; }
         public string Jurisdiction { get; set; }
     }
-    public class AuditStaffMembers
+    public class AuditStaffMembers : AuditComp
     {
         public string StaffName { get; set; }
         public string StaffTitle { get; set; }

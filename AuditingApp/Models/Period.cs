@@ -16,6 +16,13 @@ namespace AuditingApp.Models
         public int CurrentState { get; set; }
         public DateTime LastModifyDate { get; set; }
         public string LastModifyUser { get; set; }
-        
+
+        public Table Table
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace AuditingApp.Models
 {
-    public class PersonData
+    public class PersonData 
     {
         public int PeriodId { get; set; }
         public int CustomerId { get; set; }
@@ -16,6 +16,13 @@ namespace AuditingApp.Models
         public DateTime DataEntranceDate { get; set; }
         public string CreateUserId { get; set; }
         public string DataEntranceUserId { get; set; }
-        
+
+        public Person Person
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

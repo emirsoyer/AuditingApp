@@ -11,6 +11,21 @@ namespace AuditingApp.Models
         public int AccountId { get; set; }
         public DateTime CreateDate { get; set; }
         public int PageId { get; set; }
-        
+
+        public SchemaStandard SchemaStandard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Accounts Accounts
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

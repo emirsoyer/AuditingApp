@@ -16,6 +16,37 @@ namespace AuditingApp.Models
         public string PersonPhone { get; set; }
         public int CustomerId { get; set; }
         public string Gender { get; set; }
-        
+
+        public BoardMember BoardMember
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public HeadAuditor HeadAuditor
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AuditStaffMembers AuditStaffMembers
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Partner Partner
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

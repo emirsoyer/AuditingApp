@@ -11,5 +11,21 @@ namespace AuditingApp.Models
         public int CustomerId { get; set; }
         public int CurrentState { get; set; }
         public DateTime SaveDate { get; set; }
+
+        public CustomerComp CustomerComp
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Period Period
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

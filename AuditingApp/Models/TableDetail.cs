@@ -22,6 +22,12 @@ namespace AuditingApp.Models
         public string VerticalAlign { get; set; }
         public string Font { get; set; }
 
-
+        public Table Table
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

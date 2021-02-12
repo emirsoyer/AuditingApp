@@ -5,13 +5,12 @@ using System.Web;
 
 namespace AuditingApp.Models
 {
-    public class AuditComp
+    public class AuditComp 
     {
         public int AuditCompId { get; set; }
         public string AuditCompName { get; set; }
         public bool AdminStatus { get; set; }
         public bool IsSubCompany { get; set; }
-        public CustomerComp CustomerComps { get; set; }
         public string AuditingCompanyDescription { get; set; }
         public string OrganizationMembership { get; set; }
         public string TaxNumber { get; set; }
@@ -28,7 +27,13 @@ namespace AuditingApp.Models
         public virtual List<HeadAuditor> HeadAuditors { get; set; }
         public virtual List<AuditStaffMembers> AuditStaffMembers { get; set; }
 
-
+        public CustomerComp CustomerComp
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
     public class BoardMember : AuditComp

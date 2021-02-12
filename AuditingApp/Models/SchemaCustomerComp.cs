@@ -11,6 +11,21 @@ namespace AuditingApp.Models
         public int CustomerId { get; set; }
         public DateTime CreateDate { get; set; }
         public int PageId { get; set; }
-        
+
+        public SchemaStandard SchemaStandard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public CustomerComp CustomerComp
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

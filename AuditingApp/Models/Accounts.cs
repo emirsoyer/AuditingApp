@@ -27,6 +27,22 @@ namespace AuditingApp.Models
                 }
             }
         }
+
+        public CustomerComp CustomerComp
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Table Table
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
 }

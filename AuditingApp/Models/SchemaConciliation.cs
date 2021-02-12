@@ -16,6 +16,21 @@ namespace AuditingApp.Models
         public DateTime CreateDate { get; set; }
         public DateTime DataEntranceDate { get; set; }
         public int PageId { get; set; }
-        
+
+        public SchemaStandard SchemaStandard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Conciliation Conciliation
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

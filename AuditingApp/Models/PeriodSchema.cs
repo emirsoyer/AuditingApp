@@ -11,5 +11,20 @@ namespace AuditingApp.Models
         public int SchemaId { get; set; }
         public DateTime CreateDate { get; set; }
 
+        public SchemaStandard SchemaStandard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Period Period
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

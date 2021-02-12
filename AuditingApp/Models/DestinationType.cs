@@ -9,5 +9,13 @@ namespace AuditingApp.Models
     {
         public int AccountDestinationTypeId { get; set; }
         public string AccountDestinationTypeName { get; set; }
+
+        public Destination Destination
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

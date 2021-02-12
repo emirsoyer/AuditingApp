@@ -14,5 +14,13 @@ namespace AuditingApp.Models
         public double AmountActual { get; set; }
         public double AmountFixed { get; set; }
         public double AmountReport { get; set; }
+
+        public Table Table
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

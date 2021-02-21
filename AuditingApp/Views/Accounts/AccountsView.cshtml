@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AuditingApp.Models.Accounts>
+
+@{
+    ViewBag.Title = "AccountsView";
+}
+
+<h2>AccountsView</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportDescription)
+        </td>
+
+    </tr>
+}
+
+</table>

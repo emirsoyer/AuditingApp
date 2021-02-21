@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
@@ -8,6 +9,7 @@ namespace AuditingApp.Models
 {
     public class CustomerComp
     {
+        [Key]
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerType { get; set; }

@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 using AuditingApp.Models;
 
-namespace AuditingApp.Context
+namespace AuditingApp.DAL
 {
-    public class DenetimDbContext:DbContext
+    public class AuditAppContext:DbContext
     {
-        
+        public AuditAppContext() : base("AuditAppContext")
+        {
+
+        }
         public DbSet<Accounts> AccountsEnumerable { get; set; }
         public DbSet<Table> Tables { get; set; }
         public DbSet<AuditComp> AuditComps { get; set; }
@@ -19,7 +23,7 @@ namespace AuditingApp.Context
         public DbSet<SchemaStandard> Schemas { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

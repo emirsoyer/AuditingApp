@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,14 +8,18 @@ namespace AuditingApp.Models
 {
     public class Accounts
     {
+        [Key]
         public int AccountId { get; set; }
+        [Display(Name = "Hesap Kodu")]
         public string AccountCode { get; set; }
+        [Display(Name = "Hesap Adı")]
         public string AccountName { get; set; }
-        public string AccountDescription { get; set; }
+        [Display(Name = "Rapor Kod")]
+        public string ReportCode { get; set; }
+        [Display(Name = "Rapor Adı")]
+        public string ReportDescription { get; set; }
         public int SchemaId { get; set; }
-        public bool ConvertSign { get; set; }
         public string CustomerType { get; set; }
-        public bool Character { get; set; }
         private int _coefficient;
         public int CoefficientNum
         {
@@ -28,7 +33,7 @@ namespace AuditingApp.Models
             }
         }
 
-        public CustomerComp CustomerComp
+        public virtual CustomerComp CustomerComp
         {
             get => default;
             set
@@ -36,7 +41,7 @@ namespace AuditingApp.Models
             }
         }
 
-        public Table Table
+        public virtual Table Table
         {
             get => default;
             set

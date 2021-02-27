@@ -1,0 +1,90 @@
+﻿@model AuditingApp.Models.AuditComp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AuditComp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditCompName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditCompName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationMembership)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationMembership)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationMembershipNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationMembershipNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxOffice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TradeRegistryNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TradeRegistryNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MersisId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MersisId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuditCompId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +11,7 @@ namespace AuditingApp.Models
     public class Accounts
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AccountId { get; set; }
         [Display(Name = "Hesap Kodu")]
         public string AccountCode { get; set; }
@@ -18,9 +21,11 @@ namespace AuditingApp.Models
         public string ReportCode { get; set; }
         [Display(Name = "Rapor Adı")]
         public string ReportDescription { get; set; }
-        public int SchemaId { get; set; }
+        public int? SchemaId { get; set; }
         public string CustomerType { get; set; }
         private int _coefficient;
+
+        [DefaultValue(true)]
         public int CoefficientNum
         {
             get => _coefficient;

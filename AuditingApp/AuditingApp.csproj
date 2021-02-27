@@ -127,12 +127,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\AuditCompsController.cs" />
+    <Compile Include="Controllers\CustomerCompsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="DAL\AuditAppContext.cs" />
     <Compile Include="DAL\AuditDbInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102241738576_InitialCreate.cs" />
+    <Compile Include="Migrations\202102241738576_InitialCreate.Designer.cs">
+      <DependentUpon>202102241738576_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\AuditComp.cs" />
     <Compile Include="Models\Conciliation.cs" />
@@ -293,14 +300,26 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\AuditComps\AuditCompInfoView.cshtml" />
-    <Content Include="Views\AuditComps\PersonView.cshtml" />
     <Content Include="Views\Accounts\AccountsView.cshtml" />
+    <Content Include="Views\CustomerComps\Create.cshtml" />
+    <Content Include="Views\CustomerComps\Delete.cshtml" />
+    <Content Include="Views\CustomerComps\Details.cshtml" />
+    <Content Include="Views\CustomerComps\Edit.cshtml" />
+    <Content Include="Views\CustomerComps\Index.cshtml" />
+    <Content Include="Views\AuditComps\Create.cshtml" />
+    <Content Include="Views\AuditComps\Delete.cshtml" />
+    <Content Include="Views\AuditComps\Details.cshtml" />
+    <Content Include="Views\AuditComps\Edit.cshtml" />
+    <Content Include="Views\AuditComps\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
+    <Content Include="Views\Person\Delete.cshtml" />
+    <Content Include="Views\Person\Details.cshtml" />
+    <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\CustomerComps\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -312,6 +331,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202102241738576_InitialCreate.resx">
+      <DependentUpon>202102241738576_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

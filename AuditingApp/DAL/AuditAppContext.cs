@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace AuditingApp.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Accounts>().Property(p => p.AccountId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
 }

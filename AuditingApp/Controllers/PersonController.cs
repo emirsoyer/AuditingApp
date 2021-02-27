@@ -11,107 +11,107 @@ using AuditingApp.Models;
 
 namespace AuditingApp.Controllers
 {
-    public class AuditCompsController : Controller
+    public class PersonController : Controller
     {
         private AuditAppContext db = new AuditAppContext();
 
-        // GET: AuditComps
+        // GET: Person
         public ActionResult Index()
         {
-            return View(db.AuditComps.ToList());
+            return View(db.PersonEnumerable.ToList());
         }
 
-        // GET: AuditComps/Details/5
+        // GET: Person/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            Person person = db.PersonEnumerable.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(person);
         }
 
-        // GET: AuditComps/Create
+        // GET: Person/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AuditComps/Create
+        // POST: Person/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AuditCompId,AuditCompName,AdminStatus,OrganizationMembership,OrganizationMembershipNumber,TaxNumber,TaxOffice,EstablishmentDate,TradeRegistryNumber,MersisId")] AuditComp auditComp)
+        public ActionResult Create([Bind(Include = "PersonId,PersonName,JobTitle,AuditCompId,AuditCompName,PersonEmail,PersonPhone,CustomerId")] Person person)
         {
             if (ModelState.IsValid)
             {
-                db.AuditComps.Add(auditComp);
+                db.PersonEnumerable.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(auditComp);
+            return View(person);
         }
 
-        // GET: AuditComps/Edit/5
+        // GET: Person/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            Person person = db.PersonEnumerable.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(person);
         }
 
-        // POST: AuditComps/Edit/5
+        // POST: Person/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AuditCompId,AuditCompName,AdminStatus,OrganizationMembership,OrganizationMembershipNumber,TaxNumber,TaxOffice,EstablishmentDate,TradeRegistryNumber,MersisId")] AuditComp auditComp)
+        public ActionResult Edit([Bind(Include = "PersonId,PersonName,JobTitle,AuditCompId,AuditCompName,PersonEmail,PersonPhone,CustomerId")] Person person)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(auditComp).State = EntityState.Modified;
+                db.Entry(person).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(auditComp);
+            return View(person);
         }
 
-        // GET: AuditComps/Delete/5
+        // GET: Person/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            Person person = db.PersonEnumerable.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(person);
         }
 
-        // POST: AuditComps/Delete/5
+        // POST: Person/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AuditComp auditComp = db.AuditComps.Find(id);
-            db.AuditComps.Remove(auditComp);
+            Person person = db.PersonEnumerable.Find(id);
+            db.PersonEnumerable.Remove(person);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

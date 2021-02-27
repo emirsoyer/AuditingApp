@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AuditingApp.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditCompId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditCompName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditCompId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditCompName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+        </td>
+    </tr>
+}
+
+</table>

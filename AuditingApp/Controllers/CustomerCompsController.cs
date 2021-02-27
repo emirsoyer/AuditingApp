@@ -11,107 +11,107 @@ using AuditingApp.Models;
 
 namespace AuditingApp.Controllers
 {
-    public class AuditCompsController : Controller
+    public class CustomerCompsController : Controller
     {
         private AuditAppContext db = new AuditAppContext();
 
-        // GET: AuditComps
+        // GET: CustomerComps
         public ActionResult Index()
         {
-            return View(db.AuditComps.ToList());
+            return View(db.Customers.ToList());
         }
 
-        // GET: AuditComps/Details/5
-        public ActionResult Details(int? id)
+        // GET: CustomerComps/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            CustomerComp customerComp = db.Customers.Find(id);
+            if (customerComp == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(customerComp);
         }
 
-        // GET: AuditComps/Create
+        // GET: CustomerComps/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AuditComps/Create
+        // POST: CustomerComps/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AuditCompId,AuditCompName,AdminStatus,OrganizationMembership,OrganizationMembershipNumber,TaxNumber,TaxOffice,EstablishmentDate,TradeRegistryNumber,MersisId")] AuditComp auditComp)
+        public ActionResult Create([Bind(Include = "CustomerId,CustomerName,CustomerType,CustomerTypeId,Consolidation,CustomerDescription,OrganizationMembership,ObligatedCapital,PaidCapital,TaxNumber,TaxOffice,EstablishmentDate,ActivityCode,RegistryCode,LegalNature,TradeRegistryNumber,OrganizationMembershipNumber,MersisId")] CustomerComp customerComp)
         {
             if (ModelState.IsValid)
             {
-                db.AuditComps.Add(auditComp);
+                db.Customers.Add(customerComp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(auditComp);
+            return View(customerComp);
         }
 
-        // GET: AuditComps/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: CustomerComps/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            CustomerComp customerComp = db.Customers.Find(id);
+            if (customerComp == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(customerComp);
         }
 
-        // POST: AuditComps/Edit/5
+        // POST: CustomerComps/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AuditCompId,AuditCompName,AdminStatus,OrganizationMembership,OrganizationMembershipNumber,TaxNumber,TaxOffice,EstablishmentDate,TradeRegistryNumber,MersisId")] AuditComp auditComp)
+        public ActionResult Edit([Bind(Include = "CustomerId,CustomerName,CustomerType,CustomerTypeId,Consolidation,CustomerDescription,OrganizationMembership,ObligatedCapital,PaidCapital,TaxNumber,TaxOffice,EstablishmentDate,ActivityCode,RegistryCode,LegalNature,TradeRegistryNumber,OrganizationMembershipNumber,MersisId")] CustomerComp customerComp)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(auditComp).State = EntityState.Modified;
+                db.Entry(customerComp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(auditComp);
+            return View(customerComp);
         }
 
-        // GET: AuditComps/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: CustomerComps/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AuditComp auditComp = db.AuditComps.Find(id);
-            if (auditComp == null)
+            CustomerComp customerComp = db.Customers.Find(id);
+            if (customerComp == null)
             {
                 return HttpNotFound();
             }
-            return View(auditComp);
+            return View(customerComp);
         }
 
-        // POST: AuditComps/Delete/5
+        // POST: CustomerComps/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            AuditComp auditComp = db.AuditComps.Find(id);
-            db.AuditComps.Remove(auditComp);
+            CustomerComp customerComp = db.Customers.Find(id);
+            db.Customers.Remove(customerComp);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

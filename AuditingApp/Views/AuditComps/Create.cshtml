@@ -1,18 +1,18 @@
 ﻿@model AuditingApp.Models.AuditComp
 
 @{
-    ViewBag.Title = "Yeni Kayıt";
+    ViewBag.Title = "Denetçi Kuruluş Kayıt Oluştur";
 }
 
-<h2>Kuruluş Bilgileri</h2>
+<h2>Oluştur</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Yeni Kayıt</h4>
+        <h4>Denetçi Kuruluş Bilgileri</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -23,15 +23,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AdminStatus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.AdminStatus)
-                    @Html.ValidationMessageFor(model => model.AdminStatus, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.OrganizationMembership, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -91,7 +82,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Kaydet" class="btn btn-primary btn-block" />
+                <input type="submit" value="Kaydet ve İlerle" class="btn btn-primary btn-block" />
             </div>
         </div>
     </div>

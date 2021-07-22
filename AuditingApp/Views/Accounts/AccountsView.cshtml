@@ -7,7 +7,7 @@
     table, th, td {
         border: 1px solid black;
         border-spacing: 1px;
-        font-size: 10px;
+        font-size: 13px;
         
     }
     th, td {
@@ -21,7 +21,7 @@
     }
 </style>
 <h2
-    align="left">AccountsView</h2>
+    align="left">Hesap ve Raporlama Kodları</h2>
 
     
 <table class="table">
@@ -42,7 +42,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr style="width:100%">
+    <tr style="width:75%">
         <td>
             @Html.DisplayFor(modelItem => item.AccountCode)
         </td>

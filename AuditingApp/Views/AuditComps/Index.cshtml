@@ -4,18 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Denetçi Kuruluş</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Denetçi Kuruluş Ekle", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AuditCompName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AdminStatus)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrganizationMembership)
@@ -45,9 +42,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.AuditCompName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdminStatus)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OrganizationMembership)

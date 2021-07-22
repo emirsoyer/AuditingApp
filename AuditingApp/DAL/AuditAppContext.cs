@@ -13,7 +13,7 @@ namespace AuditingApp.DAL
     {
         public AuditAppContext() : base("AuditAppContext")
         {
-
+            Database.SetInitializer<AuditAppContext>(new MigrateDatabaseToLatestVersion<AuditAppContext,AuditingApp.Migrations.Configuration>());
         }
         public DbSet<Accounts> AccountsEnumerable { get; set; }
         public DbSet<Table> Tables { get; set; }

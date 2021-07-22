@@ -40,13 +40,7 @@ namespace AuditingApp.Models
         public virtual List<HeadAuditor> HeadAuditors { get; set; }
         public virtual List<AuditStaffMembers> AuditStaffMembers { get; set; }
 
-        public CustomerComp CustomerComp
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        
     }
 
     public class BoardMember : AuditComp

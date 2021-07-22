@@ -4,18 +4,18 @@
     ViewBag.Title = "Denetçi Kuruluş Kayıt Oluştur";
 }
 
-<h2>Oluştur</h2>
+<h2 style ="font-size: 25px">Kayıt Oluştur</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Denetçi Kuruluş Bilgileri</h4>
+    <div class="form-group">
+        <h4 style ="font-size: 20px">Denetçi Kuruluş Bilgileri</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.AuditCompName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.AuditCompName, new { htmlAttributes = new { @class = "form-control" } })
@@ -24,7 +24,7 @@
         </div>
 
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.OrganizationMembership, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.OrganizationMembership, new { htmlAttributes = new { @class = "form-control" } })
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.OrganizationMembershipNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.OrganizationMembershipNumber, new { htmlAttributes = new { @class = "form-control" } })
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.TaxNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TaxNumber, new { htmlAttributes = new { @class = "form-control" } })
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.TaxOffice, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TaxOffice, new { htmlAttributes = new { @class = "form-control" } })
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.EstablishmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EstablishmentDate, new { htmlAttributes = new { @class = "form-control" } })
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.TradeRegistryNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TradeRegistryNumber, new { htmlAttributes = new { @class = "form-control" } })
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             @Html.LabelFor(model => model.MersisId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MersisId, new { htmlAttributes = new { @class = "form-control" } })
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-vertical">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Kaydet ve İlerle" class="btn btn-primary btn-block" />
             </div>
@@ -89,7 +89,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Listeye Dön", "Index")
 </div>
 
 @section Scripts {

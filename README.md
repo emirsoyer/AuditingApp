@@ -1,3 +1,3 @@
 # AuditingApp
 ##Testing HTTP Trigger##
-Making this change in the doc to see if Function gets triggered by this push.
+adding a readme.md in the doc to see if Function gets triggered by this push.
